@@ -1,0 +1,15 @@
+{
+  "name": "jojoob/base",
+  "description": "This box contains Ubuntu 14.04 LTS 64-bit with some basic configuration",
+  "versions": [
+    {
+      "version": "0.2.1",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "/Users/jojoob/Documents/Development/vagrant/boxes/base/package.box"
+        }
+      ]
+    }
+  ]
+}
