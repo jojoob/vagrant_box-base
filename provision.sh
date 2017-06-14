@@ -9,3 +9,6 @@ export LANG=$locale
 export LC_ALL=$locale
 
 echo $timezone > /etc/timezone && dpkg-reconfigure tzdata
+
+apt-get update
+apt-get -y upgrade
