@@ -7,7 +7,7 @@
       "providers": [
         {
           "name": "virtualbox",
-          "url": "/Users/jojoob/Documents/Development/vagrant/boxes/base/package.box"
+          "url": "package.box"
         }
       ]
     }

@@ -4,15 +4,16 @@ function package {
 	echo "vagrant halt..."
 	vagrant halt &&
 	echo "remove existing package.box..." &&
-	rm -f package.box &&
+	rm -f box/package.box &&
 	echo "vagrant package..." &&
 	vagrant package
+	mv package.box box/
 }
 
 function bundle {
 	echo "unpacking 'package.box' file to 'unpacked' folder..." &&
 	mkdir -p unpacked &&
-	tar -xf package.box -C unpacked/ &&
+	tar -xf box/package.box -C unpacked/ &&
 	echo "bundle ovf & vmdk into tar.gz..." &&
 	tar -czf base-vm.tar.gz -C unpacked box.ovf box-disk001.vmdk &&
 	echo "removing 'unpacked' folder" &&
@@ -41,7 +42,7 @@ elif [[ $1 == '-s' || $1 == '--from-scratch' ]]; then
 	package
 elif [[ $1 == '-b' || $1 == '--bundle' ]]; then
 	echo "Bundle existing package.box..."
-	if [[ -f package.box ]]; then
+	if [[ -f box/package.box ]]; then
 		bundle
 	else
 		echo "File not found: package.box"

@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 
+  # We want to keep the insecure keys because this VM will just be used to create a vagrant box.
   config.ssh.insert_key = false
 
   config.vm.provider "virtualbox" do |v|
